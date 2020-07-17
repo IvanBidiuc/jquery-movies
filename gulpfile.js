@@ -9,6 +9,7 @@ const style = () => {
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("./css"));
 };
+
 const watch = () => {
   gulp.watch("./sass/*.scss", style);
 };
@@ -17,17 +18,18 @@ const minify = () => {
   return gulp
     .src("./css/*.css")
     .pipe(uglifycss({ uglycomments: true }))
-    .pipe(gulp.dest("./dist/"));
+    .pipe(gulp.dest("./css/"));
 };
 
-exports.scripts = () => {
-  gulp
-    .src("js/main.js")
+const scripts = () => {
+  return gulp
+    .src("./js/main.js")
     .pipe(include())
     .on("error", console.log)
     .pipe(gulp.dest("dist/js"));
 };
 
+exports.scripts = scripts;
 exports.watch = watch;
 exports.minify = minify;
 exports.default = style;

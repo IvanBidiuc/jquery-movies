@@ -1,19 +1,33 @@
-$(document).ready(() => getInitialMovies());
+$(document).ready(() => {
+  getInitialMovies();
+  $(".content-main__nav__menus--search").on("keydown", setSearchQuery);
+});
 
 const getInitialMovies = async () => {
+  const BASE_URL =
+    "https://api.themoviedb.org/3/discover/movie?api_key=ad2fb2e9ab12851bd813fca1a20c373e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
   try {
-    const data = await axios.get(
-      "https://api.themoviedb.org/3/discover/movie?api_key=ad2fb2e9ab12851bd813fca1a20c373e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
-    );
-    console.log(data);
-    let movies = "";
-    for (let i = 0; i < 12; i++) {
-      movies += `
-      <div class="content-movies__movies__movie" onClick="setMovieToStorage(${data.results[i].id})">
-        <img class="content-movies__movies__movie--img" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"
-          alt="" />
-      </div>`;
-    }
+    const data = await axios.get(BASE_URL);
+    const movies = data.data.results
+      .splice(0, 13)
+      .reduce((result, item, key) => {
+        if (key === 1)
+          return `
+        <div class="content-movies__movies__movie" onClick="setMovieToStorage(${item.id})">
+          <a href="./movie.html"> 
+            <img class="content-movies__movies__movie--img" src="https://image.tmdb.org/t/p/w500${item.poster_path}"
+            alt="" />
+          </a>
+        </div>`;
+        // result pentru prima iteratie este [object, object]
+        return `${result}
+          <div class="content-movies__movies__movie" onClick="setMovieToStorage(${item.id})">
+            <a href="./movie.html"> 
+              <img class="content-movies__movies__movie--img" src="https://image.tmdb.org/t/p/w500${item.poster_path}"
+              alt="" />
+              </a>
+          </div>`;
+      });
 
     $(".content-movies__movies").html(movies);
   } catch (error) {
@@ -23,4 +37,11 @@ const getInitialMovies = async () => {
 
 const setMovieToStorage = (id) => {
   sessionStorage.setItem("id", id);
+};
+
+const setSearchQuery = (event) => {
+  if (event.key === "Enter") {
+    sessionStorage.setItem("search", event.target.value);
+    window.location.replace("/search.html");
+  }
 };
