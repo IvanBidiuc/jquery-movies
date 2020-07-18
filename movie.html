@@ -2,50 +2,58 @@
 <html lang="en">
 
 <head>
+
+    <!-- inject:meta:html -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- endinject -->
     <link rel="stylesheet" href="./css/movie.css">
     <title>Movie</title>
 </head>
 
 <body>
 
-    <div class="movie">
-        <div class="movie-main">
-            <div class="movie-main__cover">
-                <div class="movie-main__nav">
+    <div class="content">
+        <div class="content-main">
+            <div class="content-main__cover">
+                <div class="content-main__nav">
                     <a href="index.html">
-                        <img class="movie-main__nav__logo-small" src="/assets/logo-500.png" alt="" />
+                        <img class="content-main__nav__logo-small" src="/assets/logo-500.png" alt="" />
                     </a>
-                    <div class="movie-main__nav__menus">
-                        <input class="movie-main__nav__menus--search" type="text" onkeypress="setSearchQuery()" />
+                    <div class="content-main__nav__menus">
+                        <p class="content-main__nav__menus--item">SIGN IN</p>
+                        <p class="content-main__nav__menus--item">CREATE ACCOUNTS</p>
+                        <p class="content-main__nav__menus--item">FILMS</p>
+                        <p class="content-main__nav__menus--item">LISTS</p>
+                        <p class="content-main__nav__menus--item">PEOPLE</p>
+                        <input class="content-main__nav__menus--search" type="text" onkeypress="setSearchQuery()" />
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="movie-info">
-            <div class="movie-info__col1">
-                <img class="movie-info__col1__cover" src="" />
+        <div class="content-info">
+            <div class="content-info__col1">
+                <img class="content-info__col1__cover" src="" />
 
-                <div class="movie-info__col1__feedback">
-                    <img class="movie-info__col1__feedback__heart" src="assets/heart.png" height="20" />
-                    <p class="movie-info__col1__feedback__heart-count">15k</p>
+                <div class="content-info__col1__feedback">
+                    <img class="content-info__col1__feedback__heart" src="assets/heart.png" height="20" />
+                    <p class="content-info__col1__feedback__heart-count">15k</p>
                 </div>
                 <!-- where to watch -->
-                <div class="movie-info__col1__netflix">
-                    <div class="movie-info__col1__netflix__header">
-                        <p class="movie-info__col1__netflix__header__item">Where to Watch</p>
-                        <p class="movie-info__col1__netflix__header__item">Trailer</p>
+                <div class="content-info__col1__netflix">
+                    <div class="content-info__col1__netflix__header">
+                        <p class="content-info__col1__netflix__header__item">Where to Watch</p>
+                        <p class="content-info__col1__netflix__header__item">Trailer</p>
                     </div>
-                    <div class="movie-info__col1__netflix__netflix-link">
+                    <div class="content-info__col1__netflix__netflix-link">
                         <img src="assets/netflix.png" />
                         <p>Netflix US</p>
                     </div>
-                    <div class="movie-info__col1__netflix__customize">
+                    <div class="content-info__col1__netflix__customize">
                         <p>Go PRO to customize this list</p>
                     </div>
-                    <div class="movie-info__col1__netflix__all-services">
+                    <div class="content-info__col1__netflix__all-services">
                         <p>All services</p>
                         <p>Just Watch</p>
                     </div>
@@ -53,56 +61,56 @@
             </div>
 
             <!-- column 2 -->
-            <div class="movie-info__col2">
+            <div class="content-info__col2">
                 <!-- title -->
-                <div class="movie-info__col2__info">
-                    <p class="movie-info__col2__info__title">THIS IS THE TITLE</p>
-                    <p class="movie-info__col2__info__year">THIS IS THE YEAR</p>
-                    <p class="movie-info__col2__info__director">Directed by Spike Lee</p>
+                <div class="content-info__col2__info">
+                    <p class="content-info__col2__info__title">THIS IS THE TITLE</p>
+                    <p class="content-info__col2__info__year">THIS IS THE YEAR</p>
+                    <p class="content-info__col2__info__director">Directed by Spike Lee</p>
                 </div>
-                <p class="movie-info__col2__description-title">THIS IS THE TAGLINE</p>
-                <p class="movie-info__col2__description">THIS IS THE DESCRIPTION.</p>
-                <div class="movie-info__col2__crew">
+                <p class="content-info__col2__description-title">THIS IS THE TAGLINE</p>
+                <p class="content-info__col2__description">THIS IS THE DESCRIPTION.</p>
+                <div class="content-info__col2__crew">
                     <p>Cast</p>
-                    <div class="movie-info__col2__crew__cast">
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
-                        <div class="movie-info__col2__crew__cast--name">Emma Watson</div>
+                    <div class="content-info__col2__crew__cast">
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
+                        <div class="content-info__col2__crew__cast--name">Emma Watson</div>
                     </div>
                 </div>
             </div>
 
             <!-- column 3 -->
-            <div class="movie-info__col3">
-                <div class="movie-info__col3__sign-in">Sign in to log, rate or review</div>
-                <div class="movie-info__col3__share">Share</div>
-                <div class="movie-info__col3__rating">
-                    <div class="movie-info__col3__rating__header">
+            <div class="content-info__col3">
+                <div class="content-info__col3__sign-in">Sign in to log, rate or review</div>
+                <div class="content-info__col3__share">Share</div>
+                <div class="content-info__col3__rating">
+                    <div class="content-info__col3__rating__header">
                         <p>Rating</p>
                         <p>117 Fans</p>
                     </div>
-                    <div class="movie-info__col3__rating__chart">
-                        <div class="movie-info__col3__rating__chart--item1"></div>
-                        <div class="movie-info__col3__rating__chart--item2"></div>
-                        <div class="movie-info__col3__rating__chart--item3"></div>
-                        <div class="movie-info__col3__rating__chart--item4"></div>
-                        <div class="movie-info__col3__rating__chart--item5"></div>
-                        <div class="movie-info__col3__rating__chart--item6"></div>
-                        <div class="movie-info__col3__rating__chart--item7"></div>
-                        <div class="movie-info__col3__rating__chart--item8"></div>
-                        <div class="movie-info__col3__rating__chart--item9"></div>
-                        <div class="movie-info__col3__rating__chart--item10"></div>
-                        <div class="movie-info__col3__rating__chart__stars">
+                    <div class="content-info__col3__rating__chart">
+                        <div class="content-info__col3__rating__chart--item1"></div>
+                        <div class="content-info__col3__rating__chart--item2"></div>
+                        <div class="content-info__col3__rating__chart--item3"></div>
+                        <div class="content-info__col3__rating__chart--item4"></div>
+                        <div class="content-info__col3__rating__chart--item5"></div>
+                        <div class="content-info__col3__rating__chart--item6"></div>
+                        <div class="content-info__col3__rating__chart--item7"></div>
+                        <div class="content-info__col3__rating__chart--item8"></div>
+                        <div class="content-info__col3__rating__chart--item9"></div>
+                        <div class="content-info__col3__rating__chart--item10"></div>
+                        <div class="content-info__col3__rating__chart__stars">
                             <p>
                                 7.77
                             </p>
@@ -116,26 +124,31 @@
             </div>
         </div>
 
-        <!-- footer -->
-        <div class="movie-footer">
-            <div class="movie-footer__menu">
-                <p class="movie-footer__menu--item">About</p>
-                <p class="movie-footer__menu--item">News</p>
-                <p class="movie-footer__menu--item">Pro</p>
-                <p class="movie-footer__menu--item">Apps</p>
-                <p class="movie-footer__menu--item">Year in review</p>
-                <p class="movie-footer__menu--item">Gift Guide</p>
-                <p class="movie-footer__menu--item">Podcast</p>
-                <p class="movie-footer__menu--item">Help</p>
-                <p class="movie-footer__menu--item">Terms</p>
-                <p class="movie-footer__menu--item">API</p>
-                <p class="movie-footer__menu--item">Contact</p>
+        <!-- inject:footer:html -->
+        <div class="content-footer">
+            <div class="content-footer__menu">
+                <p class="content-footer__menu--item">About</p>
+                <p class="content-footer__menu--item">News</p>
+                <p class="content-footer__menu--item">Pro</p>
+                <p class="content-footer__menu--item">Apps</p>
+                <p class="content-footer__menu--item">Year in review</p>
+                <p class="content-footer__menu--item">Gift Guide</p>
+                <p class="content-footer__menu--item">Podcast</p>
+                <p class="content-footer__menu--item">Help</p>
+                <p class="content-footer__menu--item">Terms</p>
+                <p class="content-footer__menu--item">API</p>
+                <p class="content-footer__menu--item">Contact</p>
             </div>
         </div>
+        <!-- endinject -->
+
     </div>
+
+    <!-- inject:scripts:html -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- endinject -->
     <script src="../js/movie.js"></script>
 </body>
 

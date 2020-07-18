@@ -1,6 +1,6 @@
 $(document).ready(() => {
   getInitialMovie();
-  $(".movie-main__nav__menus--search").on("keypress", setSearchQuery);
+  $(".content-main__nav__menus--search").on("keypress", setSearchQuery);
 });
 
 const getInitialMovie = async () => {
@@ -10,40 +10,40 @@ const getInitialMovie = async () => {
     const movieData = await axios.get(BASE_URL);
     const { data } = movieData;
 
-    $(".movie-info__col1__cover").replaceWith(`
-    <img class="movie-info__col1__cover"
+    $(".content-info__col1__cover").replaceWith(`
+    <img class="content-info__col1__cover"
     src="https://image.tmdb.org/t/p/w500/${data.poster_path}" />
     `);
 
-    $(".movie-info__col2__info__title").replaceWith(`
-    <p class="movie-info__col2__info__title">${data.original_title}</p>
+    $(".content-info__col2__info__title").replaceWith(`
+    <p class="content-info__col2__info__title">${data.original_title}</p>
     `);
 
-    $(".movie-info__col2__info__year").replaceWith(`
-    <p class="movie-info__col2__info__year">${data.release_date.substring(
+    $(".content-info__col2__info__year").replaceWith(`
+    <p class="content-info__col2__info__year">${data.release_date.substring(
       0,
       4
     )}</p>
     `);
 
-    $(".movie-info__col2__description-title").replaceWith(`
-    <p class="movie-info__col2__description-title">${data.tagline}</p>
+    $(".content-info__col2__description-title").replaceWith(`
+    <p class="content-info__col2__description-title">${data.tagline}</p>
     `);
 
-    $(".movie-info__col2__description").replaceWith(`
-    <p class="movie-info__col2__description">${data.overview}</p>
+    $(".content-info__col2__description").replaceWith(`
+    <p class="content-info__col2__description">${data.overview}</p>
     `);
 
-    $(".movie-info__col3__rating__chart__stars > p:eq(0)").replaceWith(`
+    $(".content-info__col3__rating__chart__stars > p:eq(0)").replaceWith(`
     <p>${data.vote_average}</p>
     `);
 
-    $(".movie-info__col3__rating__header > p:eq(1)").replaceWith(`
+    $(".content-info__col3__rating__header > p:eq(1)").replaceWith(`
     <p>${data.vote_count} voters</p>
     `);
 
-    $(".movie-info__col1__feedback__heart-count").replaceWith(`
-    <p class="movie-info__col1__feedback__heart-count">${data.popularity}</p>
+    $(".content-info__col1__feedback__heart-count").replaceWith(`
+    <p class="content-info__col1__feedback__heart-count">${data.popularity}</p>
 
     `);
   } catch (error) {
