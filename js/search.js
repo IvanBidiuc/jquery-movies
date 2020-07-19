@@ -85,12 +85,15 @@ const generatePagination = () => {
 };
 
 const determineFirstPage = (action) => {
-  if (firstPage !== 1 || action !== "-") {
-    if (action === "+") {
-      firstPage += 1;
-    } else firstPage -= 1;
-    generatePagination();
-  }
+  if (
+    (firstPage === 1 && action === "-") ||
+    (firstPage + 4 === foundMovies.total_pages && action === "+")
+  )
+    return;
+  if (action === "+") {
+    firstPage += 1;
+  } else firstPage -= 1;
+  generatePagination();
 };
 
 const goToPage = (event) => {
