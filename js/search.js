@@ -1,5 +1,6 @@
 $(document).ready(() => {
   getData();
+  $(".search").css("visibility", "hidden");
   $(".content-main__nav__menus--search").on("keypress", setSearchQuery);
 });
 
@@ -54,8 +55,10 @@ const listMovies = async (newMovies) => {
     </div>
         `;
     });
-
+    $(".search").css("visibility", "visible");
     $(".search").html(movies);
+    $(".search__loading").css("display", "none");
+
     generatePagination();
   } catch (error) {
     console.error(error);

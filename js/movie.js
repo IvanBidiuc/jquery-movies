@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  $(".content-info").css("visibility", "hidden");
   getInitialMovie();
   $(".content-main__nav__menus--search").on("keypress", setSearchQuery);
 });
@@ -12,40 +13,34 @@ const getInitialMovie = async () => {
 
     $(".content-info__col1__cover").replaceWith(`
     <img class="content-info__col1__cover"
-    src="https://image.tmdb.org/t/p/w500/${data.poster_path}" />
-    `);
+    src="https://image.tmdb.org/t/p/w500/${data.poster_path}" />`);
 
     $(".content-info__col2__info__title").replaceWith(`
-    <p class="content-info__col2__info__title">${data.original_title}</p>
-    `);
+    <p class="content-info__col2__info__title">${data.original_title}</p>`);
 
     $(".content-info__col2__info__year").replaceWith(`
     <p class="content-info__col2__info__year">${data.release_date.substring(
       0,
       4
-    )}</p>
-    `);
+    )}</p>`);
 
     $(".content-info__col2__description-title").replaceWith(`
-    <p class="content-info__col2__description-title">${data.tagline}</p>
-    `);
+    <p class="content-info__col2__description-title">${data.tagline}</p>`);
 
     $(".content-info__col2__description").replaceWith(`
-    <p class="content-info__col2__description">${data.overview}</p>
-    `);
+    <p class="content-info__col2__description">${data.overview}</p>`);
 
     $(".content-info__col3__rating__chart__stars > p:eq(0)").replaceWith(`
-    <p>${data.vote_average}</p>
-    `);
+    <p>${data.vote_average}</p>`);
 
     $(".content-info__col3__rating__header > p:eq(1)").replaceWith(`
-    <p>${data.vote_count} voters</p>
-    `);
+    <p>${data.vote_count} voters</p>`);
 
     $(".content-info__col1__feedback__heart-count").replaceWith(`
-    <p class="content-info__col1__feedback__heart-count">${data.popularity}</p>
+    <p class="content-info__col1__feedback__heart-count">${data.popularity}</p>`);
 
-    `);
+    $(".content__loading").css("display", "none");
+    $(".content-info").css("visibility", "visible");
   } catch (error) {
     console.error(error);
   }
@@ -54,6 +49,6 @@ const getInitialMovie = async () => {
 const setSearchQuery = (event) => {
   if (event.key === "Enter") {
     sessionStorage.setItem("search", event.target.value);
-    window.location.replace("/search.html");
+    window.location.href = "/search.html";
   }
 };
